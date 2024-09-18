@@ -80,7 +80,7 @@ jobs:
       - name: "extract ${{ env.comName }}"
         if: ${{ steps.restore-source-cache.outputs.cache-hit == 'true' }}
         run: |
-          tar -xvf com-source.tar
+          tar -xvf ${{ env.comName }}-source.tar
       - name: "😆 Parse ${{ env.comName }} version"
         id: parse-com-ver
         run: |
