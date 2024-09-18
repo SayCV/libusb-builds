@@ -197,27 +197,27 @@ jobs:
         env:
           MSYS_NO_PATHCONV:
           MSYS: winsymlinks:native
-      - name: create ${{ env.comName }}.${{ steps.strings.outputs.arch }} tarball
+      - name: create ${{ env.comName }}-${{ steps.strings.outputs.arch }}.tar.gz tarball
         shell: msys2 {0}
         run: |
           tar -C $install_dir \
-              -czf ${{ env.comName }}.${{ steps.strings.outputs.arch }}.tar.gz . || true
-      - name: create ${{ env.comName }}-buildlog.${{ steps.strings.outputs.arch }} tarball
+              -czf ${{ env.comName }}-${{ steps.strings.outputs.arch }}.tar.gz . || true
+      - name: create ${{ env.comName }}-${{ steps.strings.outputs.arch }}-buildlog tarball
         shell: msys2 {0}
         run: |
           tar -C $build_dir \
-              -czf ${{ env.comName }}-buildlog.${{ steps.strings.outputs.arch }}.tar.gz config.log .config || true
+              -czf ${{ env.comName }}-${{ steps.strings.outputs.arch }}-buildlog.tar.gz config.log .config || true
         if: ${{ always() }}
-      - name: upload ${{ env.comName }}.${{ steps.strings.outputs.arch }}.tar.gz tarball
+      - name: upload ${{ env.comName }}-${{ steps.strings.outputs.arch }}.tar.gz tarball
         uses: actions/upload-artifact@v4
         with:
-          name: ${{ env.comName }}.${{ steps.strings.outputs.arch }}.tar.gz
+          name: ${{ env.comName }}-${{ steps.strings.outputs.arch }}.tar.gz
           path: |
-            ${{ env.comName }}.${{ steps.strings.outputs.arch }}.tar.gz
+            ${{ env.comName }}-${{ steps.strings.outputs.arch }}.tar.gz
       - name: upload log
         uses: actions/upload-artifact@v4
         with:
-          name: ${{ env.comName }}-buildlog.${{ steps.strings.outputs.arch }}.tar.gz
+          name: ${{ env.comName }}-${{ steps.strings.outputs.arch }}-buildlog.tar.gz
           path: |
-            ${{ env.comName }}-buildlog.${{ steps.strings.outputs.arch }}.tar.gz
+            ${{ env.comName }}-${{ steps.strings.outputs.arch }}-buildlog.tar.gz
         if: ${{ always() }}
