@@ -1,0 +1,11 @@
+[  {
+    "comSource": {
+      "name": "libusb",
+      "repo_host": "github.com",
+      "repo_user": "libusb",
+      "repo_name": "libusb",
+      "branch": "master",
+      "commit": "8776b8021aeafe9ba9db3b899a8a801867c1c9af"
+    }
+  }
+]
