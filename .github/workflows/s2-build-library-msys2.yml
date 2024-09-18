@@ -82,13 +82,13 @@ jobs:
           ref: '${{ env.comCommit }}'
           fetch-depth: 0
           path: ${{ env.comDir }}
-      - name: find-latest-tag of crosstool-ng / toolchain
+      - name: find-latest-tag of toolchain
         uses: oprypin/find-latest-tag@v1
         with:
           repository: '${{ github.repository_owner }}/crosstool-ng-msys2-builds'
           releases-only: true
         id: toolchain-find-latest-tag
-      - name: download crosstool-ng / toolchain
+      - name: download toolchain
         uses: robinraju/release-downloader@v1
         with:
           repository: '${{ github.repository_owner }}/crosstool-ng-msys2-builds'
@@ -98,7 +98,7 @@ jobs:
           tarBall: false
           zipBall: false
           #token: ${{ secrets.GITHUB_TOKEN }}
-      - name: extract crosstool-ng / toolchain
+      - name: extract toolchain
         shell: msys2 {0}
         run: |
           mkdir -p .local
