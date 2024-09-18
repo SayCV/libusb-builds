@@ -157,7 +157,7 @@ jobs:
         shell: msys2 {0}
         run: |
           echo "## nothing to do"
-      - name: build ${{ matrix.sample }} for ${{ matrix.host }}
+      - name: build ${{ env.comName }} for ${{ steps.strings.outputs.arch }}
         shell: msys2 {0}
         run: |
           echo "## source_dir=$source_dir"
