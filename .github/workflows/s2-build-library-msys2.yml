@@ -78,7 +78,7 @@ jobs:
       - name: "😆 Clone ${{ env.comName }}"
         uses: actions/checkout@v4
         with:
-          repository: '$comRepoUser/$comRepoName'
+          repository: '${{ env.comRepoUser }}/${{ env.comRepoName }}'
           ref: '${{ env.comCommit }}'
           fetch-depth: 0
           path: ${{ env.comDir }}
