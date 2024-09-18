@@ -102,7 +102,7 @@ jobs:
         shell: msys2 {0}
         run: |
           mkdir -p .local
-          tar -xvf ${{ matrix.sample }}-msys2.windows-2022.tar.gz -C .local
+          tar -xf ${{ matrix.sample }}-msys2.windows-2022.tar.gz -C .local
         env:
           MSYS_NO_PATHCONV:
           MSYS: winsymlinks:native
