@@ -115,6 +115,7 @@ jobs:
         id: strings
         shell: msys2 {0}
         run: |
+          workspace="$(cygpath '${{ github.workspace }}')"
           echo "workspace="$(cygpath '${{ github.workspace }}')"" >> "$GITHUB_OUTPUT"
           # The target triplet
           triplet="$sample"
@@ -135,9 +136,9 @@ jobs:
           #    ;;
           #esac
 
-          source_dir=${{ github.workspace }}/$comDir
-          build_dir=${{ github.workspace }}/build
-          install_dir=${{ github.workspace }}/install
+          source_dir=$workspace/$comDir
+          build_dir=$workspace/build
+          install_dir=$workspace/install
           config_dir=`realpath --relative-to=$build_dir $source_dir`
           echo "## source_dir=$source_dir"
           echo "## build_dir=$build_dir"
