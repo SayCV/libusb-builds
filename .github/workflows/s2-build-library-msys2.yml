@@ -103,6 +103,9 @@ jobs:
         run: |
           mkdir -p .local
           tar -xvf ${{ matrix.sample }}-msys2.windows-2022.tar.gz -C .local
+        env:
+          MSYS_NO_PATHCONV:
+          MSYS: winsymlinks:native
       - name: "prereq PATH"
         if: ${{ runner.os == 'Windows' }}
         shell: msys2 {0}
