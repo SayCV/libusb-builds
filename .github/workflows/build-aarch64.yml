@@ -88,7 +88,7 @@ jobs:
         run: |
           source build-pkgs-versions.txt
           echo "::notice comVer=$comVer"
-          echo "arch=$arch"             >> $GITHUB_ENV
+          echo "arch=$arch"             >> $GITHUB_OUTPUT
           echo "comVer=$comVer"         >> $GITHUB_OUTPUT
           echo "releaseTag=v$comVer"    >> $GITHUB_OUTPUT
           echo "libusb $comVer" > ${{ github.workspace }}-VERSIONS.txt
