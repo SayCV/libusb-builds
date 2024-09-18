@@ -35,6 +35,7 @@ jobs:
       comName: ${{ matrix.repos.comSource.name }}
       comBranch: ${{ matrix.repos.comSource.branch }}
       comCommit: ${{ matrix.repos.comSource.commit }}
+      sample: ${{ matrix.sample }}
     outputs:
       comVer: ${{ steps.parse-com-ver.outputs.comVer }}
     steps:
