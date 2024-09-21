@@ -189,7 +189,7 @@ jobs:
             --disable-udev \
             --enable-static \
             --disable-shared \
-            --with-pic
+            --with-pic=yes
 
           echo "## Building ..."
           make -j4 V=1
