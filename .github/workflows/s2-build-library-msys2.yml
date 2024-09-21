@@ -188,7 +188,7 @@ jobs:
             --prefix=$install_dir/$comName-$arch \
             --disable-udev \
             --enable-static \
-            --disable-shared \
+            --enable-shared \
             --with-pic=yes
 
           echo "## Building ..."
