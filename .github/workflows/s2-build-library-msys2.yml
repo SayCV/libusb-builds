@@ -191,7 +191,7 @@ jobs:
             --disable-shared
 
           echo "## Building ..."
-          make -j4 -k
+          make -j4 V=1
           echo "## Installing ..."
           make install
         env:
