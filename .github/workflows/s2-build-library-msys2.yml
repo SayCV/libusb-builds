@@ -188,7 +188,7 @@ jobs:
             --prefix=$install_dir/$comName-$arch \
             --disable-udev \
             --enable-static \
-            --enable-shared
+            --disable-shared
 
           echo "## Building ..."
           make -j4 -k
